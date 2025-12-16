@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Haoxuan (Steve) Lin — Home</title>
+  <meta name="description" content="Extended resume website: education, experience, research, and projects." />
+  <link rel="stylesheet" href="style/styles.css" />
+  <script defer src="js/script.js"></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Go to Home">Haoxuan Lin</a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a aria-current="page" href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="btn" id="themeToggle" type="button" aria-pressed="false">
+        Toggle theme
+      </button>
+    </div>
+  </header>
+
+  <main id="main" class="site-main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-text">
+        <h1 id="hero-title">Haoxuan (Steve) Lin</h1>
+        <p class="lead">
+          NYU | B.S. Computer Science + Economics — Data, ML, and applied research.
+        </p>
+
+        <p>
+          I build data products and research prototypes: leakage-free modeling pipelines,
+          NLP with Transformers (FinBERT), and containerized ML systems for real-time inference.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn primary" href="projects.html">View Projects</a>
+          <a class="btn" href="contact.html">Get in Touch</a>
+        </div>
+      </div>
+
+      <figure class="hero-media">
+        <img
+          src="images/headshot.png"
+          srcset="images/headshot@2x.png 2x"
+          width="420"
+          height="420"
+          alt="Portrait photo of Haoxuan Lin"
+        />
+      </figure>
+    </section>
+
+    <section aria-labelledby="edu-title" class="card">
+      <h2 id="edu-title">Education</h2>
+
+      <article class="stack">
+        <h3>New York University (NYU)</h3>
+        <p class="muted">Jan 2023 – May 2026 · B.S. in Computer Science and Economics</p>
+
+        <figure class="media">
+          <img
+            src="images/nyu.png"
+            srcset="images/nyu@2x.png 2x"
+            width="450"
+            height="450"
+            alt="NYU campus photo"
+          />
+        </figure>
+      </article>
+    </section>
+
+    <section aria-labelledby="highlights-title" class="card">
+      <h2 id="highlights-title">Highlights</h2>
+
+      <div class="grid-3">
+        <article class="tile">
+          <h3>Soccer Outcome Modeling</h3>
+          <p>
+            Built a temporally segmented leakage-free pipeline with rolling features and time-decayed Elo ratings.
+          </p>
+          <a href="projects.html#fer" class="link">See projects →</a>
+        </article>
+
+        <article class="tile">
+          <h3>FinBERT CPI Signals</h3>
+          <p>
+            Created a supervised dataset aligning 28,000+ Fed paragraphs with CPI forecast changes; accelerated processing significantly.
+          </p>
+          <a href="projects.html#nlp" class="link">See research →</a>
+        </article>
+
+        <article class="tile">
+          <h3>Real-time ML System</h3>
+          <p>
+            Containerized facial emotion recognition client; integrated CI/CD with automated testing and high coverage.
+          </p>
+          <a href="projects.html#fer" class="link">Watch demo →</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="courses-title">
+  <h2 id="courses-title">Highlighted Courses & Certificates</h2>
+
+  <div class="grid-3">
+    <article class="tile">
+      <h3>Highlighted Courses</h3>
+      <ul>
+        <li>Money and Banking</li>
+        <li>Labor Economics</li>
+        <li>Game Theory</li>
+        <li>Computer Systems Organization</li>
+        <li>Natural Language Processing</li>
+        <li>Software Engineering</li>
+        <li>Machine Learning</li>
+      </ul>
+    </article>
+
+    <article class="tile">
+      <h3>Certificates</h3>
+      <ul>
+        <li>Deep Learning Specialization (Coursera)</li>
+        <li>Database — COMPSCIX409.1 (UC Berkeley)</li>
+      </ul>
+    </article>
+
+    <article class="tile">
+      <h3>Currently Focused On</h3>
+      <ul>
+        <li>ML pipelines & evaluation</li>
+        <li>NLP (Transformer regression)</li>
+        <li>Containerized deployment (Docker)</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Haoxuan Lin · <a href="#main">Back to top</a></p>
+  </footer>
+</body>
+</html>
