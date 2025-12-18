@@ -1,0 +1,230 @@
+/* ============ 1) Web font (required) ============ */
+@font-face{
+  font-family: "MyWebFont";
+  src: url("../fonts/Inter-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ============ 2) Base ============ */
+:root{
+  --bg: #ffffff;
+  --ink: #111827;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  --card: #f9fafb;
+  --accent: #0f766e;
+  --accent-ink: #ecfeff;
+  --radius: 16px;
+  --gap: 18px;
+  --max: 1100px;
+}
+
+[data-theme="dark"]{
+  --bg: #0b1220;
+  --ink: #e5e7eb;
+  --muted: #9ca3af;
+  --line: #1f2937;
+  --card: #0f172a;
+  --accent: #22c55e;
+  --accent-ink: #062a16;
+}
+
+*{ box-sizing: border-box; }
+html,body{ height: 100%; }
+body{
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: MyWebFont, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+img, video{ max-width: 100%; height: auto; display: block; }
+
+a{ color: var(--accent); }
+a:link{ color: var(--accent); }
+a:visited{ color: var(--accent); }
+a:hover{ text-decoration: underline; }
+a:active{ opacity: 0.8; }
+
+.skip-link{
+  position: absolute;
+  left: -9999px;
+  top: 0;
+}
+.skip-link:focus{
+  left: 12px;
+  top: 12px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+
+/* ============ 3) Header (flex) ============ */
+.site-header{
+  border-bottom: 1px solid var(--line);
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(8px);
+}
+[data-theme="dark"] .site-header{ background: rgba(11,18,32,0.6); }
+
+.header-inner{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.brand{
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--ink);
+}
+.site-nav{ margin-left: auto; }
+.nav-list{
+  list-style: none;
+  display: flex;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+}
+.nav-list a{
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+.nav-list a[aria-current="page"]{
+  background: var(--card);
+  border: 1px solid var(--line);
+}
+
+.btn{
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--ink);
+  padding: 9px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+.btn.primary{
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: transparent;
+}
+
+/* ============ 4) Layout (grid) ============ */
+.site-main{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 18px 16px 28px;
+  display: grid;
+  gap: var(--gap);
+}
+
+.page-head{
+  padding: 10px 0;
+}
+.lead{ font-size: 1.1rem; }
+.muted{ color: var(--muted); }
+
+.card{
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+
+.hero{
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--gap);
+  align-items: start;
+}
+.hero-media{
+  display: flex;
+  justify-content: center;
+}
+
+.meta{ padding-left: 18px; }
+
+.hero-media img{
+  display: block;
+  margin: 0 auto;
+}
+.grid-3{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+}
+.tile{
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px;
+  background: var(--bg);
+}
+
+.sub-nav-list{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+}
+.sub-nav-list a{
+  text-decoration: none;
+  border: 1px solid var(--line);
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+.toolbar{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+select{
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 8px 10px;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.stack{ margin-top: 14px; }
+
+.media{
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 12px 0;
+}
+
+.media img{
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+
+
+.video{ border-radius: 14px; border: 1px solid var(--line); }
+
+.site-footer{
+  border-top: 1px solid var(--line);
+  padding: 18px 16px;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* ============ 5) Responsive (required) ============ */
+@media (max-width: 820px){
+  .hero{ grid-template-columns: 1fr; }
+  .grid-3{ grid-template-columns: 1fr; } /* mobile: one column */
+  .site-nav{ margin-left: 0; }
+  .header-inner{ flex-wrap: wrap; }
+}
